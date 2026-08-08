@@ -163,7 +163,7 @@ python main.py
 
 ## 👩‍💻 Author
 
-**Shweta Boraganve**
+Shweta Boraganve
 
 GitHub: https://github.com/shweta-borganve
 
