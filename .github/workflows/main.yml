@@ -21,4 +21,4 @@ jobs:
 
     - name: Execute Main Script
       run: |
-        python main.py 
+        echo -e "admin\npassword" | python main.py
