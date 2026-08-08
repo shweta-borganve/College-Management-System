@@ -1,6 +1,7 @@
-from logger_config import logger
 import json
+
 from data import students
+from logger_config import logger
 
 
 def add_student():
@@ -19,7 +20,7 @@ def add_student():
         "Gender": gender,
         "Department": department,
         "Year": year,
-        "Phone": phone
+        "Phone": phone,
     }
 
     students.append(student)
@@ -159,4 +160,4 @@ def student_management():
 
         else:
             logger.warning(f"Invalid student menu choice: {choice}")
-            print("Invalid choice") 
+            print("Invalid choice")

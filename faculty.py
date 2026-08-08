@@ -1,6 +1,8 @@
-from logger_config import logger 
 import json
-from data import faculty 
+
+from data import faculty
+from logger_config import logger
+
 
 def add_faculty():
     faculty_id = input("Enter Faculty ID: ")
@@ -14,16 +16,17 @@ def add_faculty():
         "Name": name,
         "Department": department,
         "Subject": subject,
-        "Phone": phone
+        "Phone": phone,
     }
 
     faculty.append(faculty_member)
-    logger.info(f"Faculty {faculty_id} added successfully") 
+    logger.info(f"Faculty {faculty_id} added successfully")
 
     with open("faculty.json", "w") as f:
         json.dump(faculty, f, indent=4)
 
-    print("\nFaculty added successfully!\n") 
+    print("\nFaculty added successfully!\n")
+
 
 def view_faculty():
     if not faculty:
@@ -40,15 +43,16 @@ def view_faculty():
         print(f"Department : {member['Department']}")
         print(f"Subject    : {member['Subject']}")
         print(f"Phone      : {member['Phone']}")
-        print("-" * 60) 
+        print("-" * 60)
+
 
 def search_faculty():
     faculty_id = input("Enter Faculty ID to search: ")
-    logger.debug(f"Searching Faculty Id: {faculty_id}") 
+    logger.debug(f"Searching Faculty Id: {faculty_id}")
 
     for member in faculty:
         if member["Faculty ID"] == faculty_id:
-            logger.info(f"Faculty{faculty_id} found") 
+            logger.info(f"Faculty{faculty_id} found")
             print("\nFaculty Found")
             print("-" * 30)
             print(f"Faculty ID : {member['Faculty ID']}")
@@ -57,9 +61,10 @@ def search_faculty():
             print(f"Subject    : {member['Subject']}")
             print(f"Phone      : {member['Phone']}")
             return
-        
-    logger.warning(f"Faculty{faculty_id} not found") 
-    print("\nFaculty not found.\n") 
+
+    logger.warning(f"Faculty{faculty_id} not found")
+    print("\nFaculty not found.\n")
+
 
 def update_faculty():
     faculty_id = input("Enter Faculty ID to update: ")
@@ -79,9 +84,10 @@ def update_faculty():
 
             print("\nFaculty updated successfully!\n")
             return
-        
-    logger.warning(f"Faculty{faculty_id} not found for update") 
-    print("\nFaculty not found.\n") 
+
+    logger.warning(f"Faculty{faculty_id} not found for update")
+    print("\nFaculty not found.\n")
+
 
 def delete_faculty():
     faculty_id = input("Enter Faculty ID to delete: ")
@@ -98,7 +104,8 @@ def delete_faculty():
             return
 
     logger.warning(f"Faculty {faculty_id} not found for deletion")
-    print("\nFaculty not found.\n") 
+    print("\nFaculty not found.\n")
+
 
 def faculty_management():
     while True:
@@ -117,7 +124,7 @@ def faculty_management():
             choice = int(input("Enter your choice (1-6): "))
             logger.debug(f"Faculty menu choice:{choice}")
         except ValueError:
-            logger.error("Invalid menu choice entered in faculty management") 
+            logger.error("Invalid menu choice entered in faculty management")
             print("Please enter a valid choice")
             continue
 
@@ -125,19 +132,19 @@ def faculty_management():
             add_faculty()
 
         elif choice == 2:
-            view_faculty() 
+            view_faculty()
 
         elif choice == 3:
-            search_faculty() 
+            search_faculty()
 
         elif choice == 4:
-            update_faculty() 
+            update_faculty()
 
         elif choice == 5:
-            delete_faculty() 
+            delete_faculty()
 
         elif choice == 6:
-            break 
+            break
 
         else:
-            print("Invalid choice") 
+            print("Invalid choice")

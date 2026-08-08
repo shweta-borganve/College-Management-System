@@ -1,5 +1,5 @@
+from data import courses, enrollment, faculty, students
 from logger_config import logger
-from data import students, faculty, courses, enrollment
 
 
 def reports():
@@ -44,4 +44,4 @@ def reports():
 
         else:
             logger.warning(f"Invalid reports menu choice: {choice}")
-            print("Invalid choice") 
+            print("Invalid choice")

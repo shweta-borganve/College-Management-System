@@ -13,7 +13,7 @@ else:
 if os.path.exists("faculty.json"):
     try:
         with open("faculty.json", "r") as f:
-            faculty = json.load(f) 
+            faculty = json.load(f)
     except json.JSONDecodeError:
         faculty = []
 else:
@@ -35,4 +35,4 @@ if os.path.exists("enrollment.json"):
     except json.JSONDecodeError:
         enrollment = []
 else:
-    enrollment = [] 
+    enrollment = []

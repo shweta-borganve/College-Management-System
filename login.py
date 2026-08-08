@@ -1,5 +1,6 @@
 from logger_config import logger
 
+
 def login():
     username = input("Enter Username: ")
     password = input("Enter Password: ")
@@ -11,4 +12,4 @@ def login():
     else:
         logger.critical("Unauthorized login attempt")
         print("\nInvalid Username or Password\n")
-        return False 
+        return False

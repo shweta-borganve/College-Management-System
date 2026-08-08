@@ -1,16 +1,14 @@
-from logger_config import logger
 import json
+
 from data import enrollment
+from logger_config import logger
 
 
 def add_enrollment():
     student_id = input("Enter Student ID: ")
     course_id = input("Enter Course ID: ")
 
-    enroll = {
-        "Student ID": student_id,
-        "Course ID": course_id
-    }
+    enroll = {"Student ID": student_id, "Course ID": course_id}
 
     enrollment.append(enroll)
 
@@ -51,7 +49,9 @@ def delete_enrollment():
             with open("enrollment.json", "w") as f:
                 json.dump(enrollment, f, indent=4)
 
-            logger.info(f"Enrollment deleted: Student {student_id} -> Course {course_id}")
+            logger.info(
+                f"Enrollment deleted: Student {student_id} -> Course {course_id}"
+            )
             print("\nEnrollment deleted successfully!\n")
             return
 
@@ -93,4 +93,4 @@ def enrollment_management():
 
         else:
             logger.warning(f"Invalid enrollment menu choice: {choice}")
-            print("Invalid choice") 
+            print("Invalid choice")

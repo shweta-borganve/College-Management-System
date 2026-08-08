@@ -1,10 +1,12 @@
-from logger_config import logger
-from login import login
-from student import student_management
-from faculty import faculty_management
+import sys
+
 from course import course_management
 from enrollment import enrollment_management
+from faculty import faculty_management
+from logger_config import logger
+from login import login
 from reports import reports
+from student import student_management
 
 logger.info("College Management System Started")
 
@@ -14,7 +16,7 @@ if login():
 else:
     logger.critical("Login failed. Application terminated.")
     print("Access Denied.\n")
-    exit()
+    sys.exit()
 
 while True:
     print("*" * 20)

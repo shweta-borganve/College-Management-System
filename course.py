@@ -1,6 +1,7 @@
-from logger_config import logger
 import json
+
 from data import courses
+from logger_config import logger
 
 
 def add_course():
@@ -13,7 +14,7 @@ def add_course():
         "Course ID": course_id,
         "Course Name": course_name,
         "Department": department,
-        "Credits": credits
+        "Credits": credits,
     }
 
     courses.append(course)
@@ -145,4 +146,4 @@ def course_management():
 
         else:
             logger.warning(f"Invalid course menu choice: {choice}")
-            print("Invalid choice") 
+            print("Invalid choice")
